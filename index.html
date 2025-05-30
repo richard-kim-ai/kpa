@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한국프리젠터협회</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#1a56db',secondary:'#4f46e5'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            color: #333;
+        }
+        .hero-section {
+            background-image: url('https://readdy.ai/api/search-image?query=professional%20presentation%20scene%20with%20a%20confident%20presenter%20on%20stage%20with%20audience%2C%20modern%20conference%20hall%2C%20business%20setting%2C%20soft%20lighting%2C%20professional%20atmosphere%2C%20high%20quality%2C%20detailed%2C%20photorealistic&width=1600&height=800&seq=1&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+        }
+        .hero-overlay {
+            background: linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.6) 80%, rgba(255,255,255,0) 100%);
+        }
+        input:focus, button:focus, a:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- 헤더 -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-['Pacifico'] text-primary">logo</a>
+            
+            <nav class="hidden lg:flex space-x-8">
+                <a href="#intro" class="text-gray-700 hover:text-primary font-medium">협회 소개</a>
+                <a href="#education" class="text-gray-700 hover:text-primary font-medium">교육과정</a>
+                <a href="#certificate" class="text-gray-700 hover:text-primary font-medium">자격증 안내</a>
+                <a href="#resources" class="text-gray-700 hover:text-primary font-medium">자료실</a>
+                <a href="#notice" class="text-gray-700 hover:text-primary font-medium">공지사항</a>
+                <a href="#membership" class="text-gray-700 hover:text-primary font-medium">회원서비스</a>
+                <a href="#contact" class="text-gray-700 hover:text-primary font-medium">문의하기</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-gray-700 hover:text-primary font-medium hidden md:block">로그인</a>
+                <a href="#" class="bg-primary text-white px-4 py-2 rounded-button whitespace-nowrap hidden md:block">회원가입</a>
+                <button class="lg:hidden w-10 h-10 flex items-center justify-center">
+                    <i class="ri-menu-line text-gray-700 ri-lg"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 히어로 섹션 -->
+    <section class="hero-section relative">
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="container mx-auto px-4 py-20 md:py-32 relative z-10">
+            <div class="max-w-2xl">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">한국프리젠터협회</h1>
+                <p class="text-xl md:text-2xl text-gray-700 mb-8">효과적인 프레젠테이션 기술을 통해 <br>더 나은 커뮤니케이션의 미래를 만들어갑니다</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#education" class="bg-primary text-white px-6 py-3 rounded-button font-medium whitespace-nowrap">교육과정 알아보기</a>
+                    <a href="#membership" class="bg-white text-primary border border-primary px-6 py-3 rounded-button font-medium whitespace-nowrap">회원 가입하기</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 협회 소개 -->
+    <section id="intro" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">협회 소개</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">한국프리젠터협회는 프레젠테이션 기술의 발전과 전문가 양성을 위해 설립된 국내 유일의 프레젠테이션 전문 단체입니다.</p>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="border-b">
+                    <div class="flex">
+                        <button id="tab-purpose" class="tab-btn px-6 py-4 text-primary border-b-2 border-primary font-medium">설립 목적</button>
+                        <button id="tab-history" class="tab-btn px-6 py-4 text-gray-500 font-medium">연혁</button>
+                        <button id="tab-organization" class="tab-btn px-6 py-4 text-gray-500 font-medium">조직도</button>
+                    </div>
+                </div>
+                
+                <div class="p-6">
+                    <!-- 설립 목적 -->
+                    <div id="content-purpose" class="tab-content">
+                        <div class="flex flex-col md:flex-row gap-8 items-center">
+                            <div class="md:w-1/2">
+                                <h3 class="text-2xl font-bold mb-4">설립 목적</h3>
+                                <p class="text-gray-700 mb-4">한국프리젠터협회는 2010년 프레젠테이션 기술의 체계적인 교육과 연구를 통해 국내 프레젠테이션 문화를 발전시키고 전문 인력을 양성하기 위해 설립되었습니다.</p>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start">
+                                        <div class="w-6 h-6 flex items-center justify-center mt-0.5 mr-2 bg-primary/10 rounded-full text-primary">
+                                            <i class="ri-check-line"></i>
+                                        </div>
+                                        <span>프레젠테이션 기술의 체계적인 연구 및 교육 시스템 구축</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="w-6 h-6 flex items-center justify-center mt-0.5 mr-2 bg-primary/10 rounded-full text-primary">
+                                            <i class="ri-check-line"></i>
+                                        </div>
+                                        <span>프레젠테이션 전문가 양성 및 자격 인증 제도 운영</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="w-6 h-6 flex items-center justify-center mt-0.5 mr-2 bg-primary/10 rounded-full text-primary">
+                                            <i class="ri-check-line"></i>
+                                        </div>
+                                        <span>국내외 프레젠테이션 관련 학술 교류 및 네트워크 형성</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="w-6 h-6 flex items-center justify-center mt-0.5 mr-2 bg-primary/10 rounded-full text-primary">
+                                            <i class="ri-check-line"></i>
+                                        </div>
+                                        <span>효과적인 커뮤니케이션 문화 확산을 위한 사회 활동</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="md:w-1/2">
+                                <img src="https://readdy.ai/api/search-image?query=professional%20meeting%20room%20with%20people%20discussing%20presentation%20skills%2C%20business%20professionals%20in%20a%20modern%20conference%20room%2C%20clean%20corporate%20environment%2C%20soft%20lighting%2C%20professional%20atmosphere&width=600&height=400&seq=2&orientation=landscape" alt="협회 설립 목적" class="rounded-lg shadow-md w-full h-auto object-cover">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 연혁 -->
+                    <div id="content-history" class="tab-content hidden">
+                        <h3 class="text-2xl font-bold mb-6">협회 연혁</h3>
+                        <div class="relative border-l-2 border-primary/30 pl-8 ml-4 space-y-10">
+                            <div class="relative">
+                                <div class="absolute -left-10 top-0 w-6 h-6 bg-primary rounded-full"></div>
+                                <div class="mb-2">
+                                    <h4 class="text-xl font-bold">2023 - 현재</h4>
+                                </div>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li>• 제5대 김민준 회장 취임</li>
+                                    <li>• 국제 프레젠테이션 컨퍼런스 개최 (서울)</li>
+                                    <li>• 온라인 교육 플랫폼 '프레젠터 아카데미' 런칭</li>
+                                    <li>• 회원 5,000명 돌파</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="relative">
+                                <div class="absolute -left-10 top-0 w-6 h-6 bg-primary/80 rounded-full"></div>
+                                <div class="mb-2">
+                                    <h4 class="text-xl font-bold">2018 - 2022</h4>
+                                </div>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li>• 제4대 박지영 회장 취임</li>
+                                    <li>• 프레젠테이션 강사 자격증 제도 도입</li>
+                                    <li>• 교육부 인증 교육 기관 지정</li>
+                                    <li>• 아시아 프레젠테이션 협회 연합 가입</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="relative">
+                                <div class="absolute -left-10 top-0 w-6 h-6 bg-primary/60 rounded-full"></div>
+                                <div class="mb-2">
+                                    <h4 class="text-xl font-bold">2014 - 2017</h4>
+                                </div>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li>• 제3대 이서연 회장 취임</li>
+                                    <li>• 프레젠테이션 전문가 자격증 제도 확립</li>
+                                    <li>• 협회지 '프레젠터' 창간</li>
+                                    <li>• 기업 맞춤형 교육 프로그램 개발</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="relative">
+                                <div class="absolute -left-10 top-0 w-6 h-6 bg-primary/40 rounded-full"></div>
+                                <div class="mb-2">
+                                    <h4 class="text-xl font-bold">2010 - 2013</h4>
+                                </div>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li>• 한국프리젠터협회 설립 (초대 회장 정태영)</li>
+                                    <li>• 제2대 최현우 회장 취임</li>
+                                    <li>• 프레젠테이션 기초/심화 교육과정 개발</li>
+                                    <li>• 제1회 한국 프레젠테이션 컨테스트 개최</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 조직도 -->
+                    <div id="content-organization" class="tab-content hidden">
+                        <h3 class="text-2xl font-bold mb-6">조직도</h3>
+                        <div class="flex justify-center mb-8">
+                            <div class="w-full max-w-4xl">
+                                <div class="bg-white rounded-lg shadow-md p-6">
+                                    <div class="flex flex-col items-center">
+                                        <div class="bg-primary/10 rounded-lg p-4 mb-4 w-64 text-center">
+                                            <h4 class="font-bold text-primary">회장</h4>
+                                            <p class="text-gray-700">김민준</p>
+                                        </div>
+                                        
+                                        <div class="w-px h-8 bg-gray-300"></div>
+                                        
+                                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 w-full">
+                                            <div class="bg-gray-100 rounded-lg p-4 text-center">
+                                                <h4 class="font-bold text-gray-800">부회장</h4>
+                                                <p class="text-gray-700">이지원</p>
+                                            </div>
+                                            <div class="bg-gray-100 rounded-lg p-4 text-center">
+                                                <h4 class="font-bold text-gray-800">사무총장</h4>
+                                                <p class="text-gray-700">박서진</p>
+                                            </div>
+                                            <div class="bg-gray-100 rounded-lg p-4 text-center">
+                                                <h4 class="font-bold text-gray-800">자문위원장</h4>
+                                                <p class="text-gray-700">최현우</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="w-full h-px bg-gray-300 mb-8"></div>
+                                        
+                                        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 w-full">
+                                            <div class="bg-blue-50 rounded-lg p-4">
+                                                <h4 class="font-bold text-center mb-2 text-gray-800">교육연구부</h4>
+                                                <ul class="text-sm text-gray-700">
+                                                    <li>• 부장: 정수민</li>
+                                                    <li>• 교육과정 개발</li>
+                                                    <li>• 교재 제작</li>
+                                                    <li>• 강사 교육</li>
+                                                </ul>
+                                            </div>
+                                            <div class="bg-blue-50 rounded-lg p-4">
+                                                <h4 class="font-bold text-center mb-2 text-gray-800">자격검정부</h4>
+                                                <ul class="text-sm text-gray-700">
+                                                    <li>• 부장: 김도윤</li>
+                                                    <li>• 자격증 관리</li>
+                                                    <li>• 시험 운영</li>
+                                                    <li>• 인증 심사</li>
+                                                </ul>
+                                            </div>
+                                            <div class="bg-blue-50 rounded-lg p-4">
+                                                <h4 class="font-bold text-center mb-2 text-gray-800">기획홍보부</h4>
+                                                <ul class="text-sm text-gray-700">
+                                                    <li>• 부장: 이하은</li>
+                                                    <li>• 행사 기획</li>
+                                                    <li>• 홍보 활동</li>
+                                                    <li>• 대외 협력</li>
+                                                </ul>
+                                            </div>
+                                            <div class="bg-blue-50 rounded-lg p-4">
+                                                <h4 class="font-bold text-center mb-2 text-gray-800">회원관리부</h4>
+                                                <ul class="text-sm text-gray-700">
+                                                    <li>• 부장: 박민서</li>
+                                                    <li>• 회원 관리</li>
+                                                    <li>• 회비 관리</li>
+                                                    <li>• 회원 서비스</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 교육과정 -->
+    <section id="education" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">교육과정</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">한국프리젠터협회에서는 다양한 수준과 목적에 맞는 체계적인 프레젠테이션 교육 프로그램을 제공합니다.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 기초 과정 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:transform hover:scale-105">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=beginner%20presentation%20training%2C%20diverse%20group%20of%20people%20learning%20basic%20presentation%20skills%20in%20a%20bright%20classroom%2C%20professional%20setting%2C%20educational%20environment&width=600&height=400&seq=3&orientation=landscape" alt="기초 과정" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">프레젠테이션 기초 과정</h3>
+                        <p class="text-gray-600 mb-4">프레젠테이션의 기본 원리와 기술을 배우는 입문자를 위한 과정입니다.</p>
+                        
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-start">
+                                <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+                                    <i class="ri-user-line"></i>
+                                </div>
+                                <div>
+                                    <span class="font-medium">수강 대상:</span>
+                                    <span class="text-gray-700"> 프레젠테이션 입문자, 기본기를 다지고 싶은 분</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+                                    <i class="ri-time-line"></i>
+                                </div>
+                                <div>
+                                    <span class="font-medium">교육 기간:</span>
+                                    <span class="text-gray-700"> 8주 과정 (주 1회, 3시간)</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+                                    <i class="ri-book-open-line"></i>
+                                </div>
+                                <div>
+                                    <span class="font-medium">주요 내용:</span>
+                                    <ul class="text-gray-700 ml-2">
+                                        <li>• 프레젠테이션 기본 구조와 원리</li>
+                                        <li>• 효과적인 슬라이드 디자인</li>
+                                        <li>• 발표 불안 극복하기</li>
+                                        <li>• 기본 발표 기술과 연습</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="block text-center bg-primary text-white py-2 px-4 rounded-button font-medium whitespace-nowrap">자세히 보기</a>
+                    </div>
+                </div>
+                
+                <!-- 심화 과정 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:transform hover:scale-105">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=advanced%20presentation%20training%2C%20professional%20business%20people%20practicing%20advanced%20presentation%20techniques%2C%20corporate%20training%20room%2C%20professional%20environment&width=600&height=400&seq=4&orientation=landscape" alt="심화 과정" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">프레젠테이션 심화 과정</h3>
+                        <p class="text-gray-600 mb-4">고급 프레젠테이션 기술과 전략을 배우는 전문가 지향 과정입니다.</p>
+                        
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-start">
+                                <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+                                    <i class="ri-user-line"></i>
+                                </div>
+                                <div>
+                                    <span class="font-medium">수강 대상:</span>
+                                    <span class="text-gray-700"> 기초 과정 이수자, 프레젠테이션 경험자</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+                                    <i class="ri-time-line"></i>
+                                </div>
+                                <div>
+                                    <span class="font-medium">교육 기간:</span>
+                                    <span class="text-gray-700"> 10주 과정 (주 1회, 3시간)</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+                                    <i class="ri-book-open-line"></i>
+                                </div>
+                                <div>
+                                    <span class="font-medium">주요 내용:</span>
+                                    <ul class="text-gray-700 ml-2">
+                                        <li>• 고급 스토리텔링 기법</li>
+                                        <li>• 설득력 있는 메시지 구성</li>
+                                        <li>• 청중 분석과 맞춤형 발표</li>
+                                        <li>• 비언어적 커뮤니케이션 마스터하기</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="block text-center bg-primary text-white py-2 px-4 rounded-button font-medium whitespace-nowrap">자세히 보기</a>
+                    </div>
+                </div>
+                
+                <!-- 강사 양성 과정 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:transform hover:scale-105">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=presentation%20trainer%20certification%20program%2C%20professional%20instructor%20teaching%20presentation%20skills%20to%20a%20group%20of%20future%20trainers%2C%20educational%20setting%2C%20professional%20environment&width=600&height=400&seq=5&orientation=landscape" alt="강사 양성 과정" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">프레젠테이션 강사 양성 과정</h3>
+                        <p class="text-gray-600 mb-4">프레젠테이션 교육 전문가를 양성하는 전문 과정입니다.</p>
+                        
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-start">
+                                <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+                                    <i class="ri-user-line"></i>
+                                </div>
+                                <div>
+                                    <span class="font-medium">수강 대상:</span>
+                                    <span class="text-gray-700"> 심화 과정 이수자, 프레젠테이션 강사 희망자</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+                                    <i class="ri-time-line"></i>
+                                </div>
+                                <div>
+                                    <span class="font-medium">교육 기간:</span>
+                                    <span class="text-gray-700"> 12주 과정 (주 2회, 4시간)</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+                                    <i class="ri-book-open-line"></i>
+                                </div>
+                                <div>
+                                    <span class="font-medium">주요 내용:</span>
+                                    <ul class="text-gray-700 ml-2">
+                                        <li>• 프레젠테이션 교육 방법론</li>
+                                        <li>• 교육 프로그램 설계 및 개발</li>
+                                        <li>• 피드백 기술과 코칭 방법</li>
+                                        <li>• 실전 교육 시연 및 평가</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="block text-center bg-primary text-white py-2 px-4 rounded-button font-medium whitespace-nowrap">자세히 보기</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-blue-50 rounded-lg p-6 shadow-sm">
+                <h3 class="text-xl font-bold mb-4">교육 일정 및 신청 안내</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-medium mb-2">다음 개강 일정</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+                                    <i class="ri-calendar-line"></i>
+                                </div>
+                                <span>기초 과정: 2025년 6월 15일 (일요일반), 6월 17일 (화요일반)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+                                    <i class="ri-calendar-line"></i>
+                                </div>
+                                <span>심화 과정: 2025년 7월 6일 (토요일반), 7월 8일 (월요일반)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+                                    <i class="ri-calendar-line"></i>
+                                </div>
+                                <span>강사 양성 과정: 2025년 8월 3일 (주말 집중반)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-medium mb-2">신청 방법</h4>
+                        <p class="text-gray-700 mb-4">홈페이지 회원 가입 후 교육과정 신청 페이지에서 원하는 과정을 선택하여 신청하실 수 있습니다.</p>
+                        <a href="#" class="inline-block bg-primary text-white py-2 px-4 rounded-button font-medium whitespace-nowrap">교육 신청하기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 자격증 안내 -->
+    <section id="certificate" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">자격증 안내</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">한국프리젠터협회에서는 프레젠테이션 역량을 공식적으로 인증하는 다양한 자격증을 발급하고 있습니다.</p>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-md overflow-hidden mb-8">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="bg-gray-100">
+                                <th class="px-6 py-4 text-left font-bold">자격증명</th>
+                                <th class="px-6 py-4 text-left font-bold">등급</th>
+                                <th class="px-6 py-4 text-left font-bold">응시 자격</th>
+                                <th class="px-6 py-4 text-left font-bold">시험 내용</th>
+                                <th class="px-6 py-4 text-left font-bold">취득 혜택</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4" rowspan="3">프레젠테이션 전문가</td>
+                                <td class="px-6 py-4">3급</td>
+                                <td class="px-6 py-4">
+                                    <ul class="text-sm">
+                                        <li>• 제한 없음</li>
+                                        <li>• 기초 과정 수료 권장</li>
+                                    </ul>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <ul class="text-sm">
+                                        <li>• 필기: 기초 이론</li>
+                                        <li>• 실기: 3분 발표</li>
+                                    </ul>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <ul class="text-sm">
+                                        <li>• 협회 자료 이용</li>
+                                        <li>• 심화 과정 지원 자격</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4">2급</td>
+                                <td class="px-6 py-4">
+                                    <ul class="text-sm">
+                                        <li>• 3급 자격증 소지자</li>
+                                        <li>• 심화 과정 수료자</li>
+                                    </ul>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <ul class="text-sm">
+                                        <li>• 필기: 심화 이론</li>
+                                        <li>• 실기: 5분 주제 발표</li>
+                                    </ul>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <ul class="text-sm">
+                                        <li>• 기업 강사 활동 가능</li>
+                                        <li>• 강사 양성 과정 지원 자격</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4">1급</td>
+                                <td class="px-6 py-4">
+                                    <ul class="text-sm">
+                                        <li>• 2급 취득 후 1년 이상</li>
+                                        <li>• 관련 활동 경력 증빙</li>
+                                    </ul>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <ul class="text-sm">
+                                        <li>• 필기: 전문 이론</li>
+                                        <li>• 실기: 10분 전문 발표</li>
+                                        <li>• 논문: 연구 보고서</li>
+                                    </ul>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <ul class="text-sm">
+                                        <li>• 협회 공식 전문가 인증</li>
+                                        <li>• 강사 자격 시험 면제</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4" rowspan="2">프레젠테이션 강사</td>
+                                <td class="px-6 py-4">2급</td>
+                                <td class="px-6 py-4">
+                                    <ul class="text-sm">
+                                        <li>• 전문가 2급 이상 소지자</li>
+                                        <li>• 강사 양성 과정 수료자</li>
+                                    </ul>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <ul class="text-sm">
+                                        <li>• 필기: 교육 이론</li>
+                                        <li>• 실기: 30분 강의 시연</li>
+                                    </ul>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <ul class="text-sm">
+                                        <li>• 협회 인증 강사 자격</li>
+                                        <li>• 기초 과정 강의 가능</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4">1급</td>
+                                <td class="px-6 py-4">
+                                    <ul class="text-sm">
+                                        <li>• 강사 2급 취득 후 2년 이상</li>
+                                        <li>• 강의 경력 500시간 이상</li>
+                                    </ul>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <ul class="text-sm">
+                                        <li>• 필기: 고급 교육 이론</li>
+                                        <li>• 실기: 교육 프로그램 개발</li>
+                                        <li>• 면접: 전문성 평가</li>
+                                    </ul>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <ul class="text-sm">
+                                        <li>• 협회 공식 전문 강사 인증</li>
+                                        <li>• 모든 과정 강의 가능</li>
+                                        <li>• 교재 개발 참여 기회</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold mb-4">시험 일정</h3>
+                    <div class="mb-4">
+                        <h4 class="font-medium mb-2">2025년 시험 일정</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+                                    <i class="ri-calendar-check-line"></i>
+                                </div>
+                                <div>
+                                    <span class="font-medium">1차 시험:</span>
+                                    <ul class="ml-4 text-gray-700">
+                                        <li>• 접수 기간: 2025년 3월 1일 ~ 3월 15일</li>
+                                        <li>• 시험 일자: 2025년 4월 20일</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+                                    <i class="ri-calendar-check-line"></i>
+                                </div>
+                                <div>
+                                    <span class="font-medium">2차 시험:</span>
+                                    <ul class="ml-4 text-gray-700">
+                                        <li>• 접수 기간: 2025년 7월 1일 ~ 7월 15일</li>
+                                        <li>• 시험 일자: 2025년 8월 25일</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+                                    <i class="ri-calendar-check-line"></i>
+                                </div>
+                                <div>
+                                    <span class="font-medium">3차 시험:</span>
+                                    <ul class="ml-4 text-gray-700">
+                                        <li>• 접수 기간: 2025년 10월 1일 ~ 10월 15일</li>
+                                        <li>• 시험 일자: 2025년 11월 30일</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#" class="inline-block bg-primary text-white py-2 px-4 rounded-button font-medium whitespace-nowrap">시험 일정 상세보기</a>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold mb-4">응시 절차</h3>
+                    <div class="relative border-l-2 border-primary/30 pl-6 ml-2 space-y-6 mb-6">
+                        <div class="relative">
+                            <div class="absolute -left-8 top-0 w-5 h-5 bg-primary rounded-full flex items-center justify-center text-white text-xs">1</div>
+                            <h4 class="font-medium mb-1">응시 자격 확인</h4>
+                            <p class="text-gray-700 text-sm">각 자격증 및 등급별 응시 자격 요건을 확인합니다.</p>
+                        </div>
+                        
+                        <div class="relative">
+                            <div class="absolute -left-8 top-0 w-5 h-5 bg-primary rounded-full flex items-center justify-center text-white text-xs">2</div>
+                            <h4 class="font-medium mb-1">온라인 접수</h4>
+                            <p class="text-gray-700 text-sm">협회 홈페이지에서 회원 로그인 후 시험 접수를 진행합니다.</p>
+                        </div>
+                        
+                        <div class="relative">
+                            <div class="absolute -left-8 top-0 w-5 h-5 bg-primary rounded-full flex items-center justify-center text-white text-xs">3</div>
+                            <h4 class="font-medium mb-1">응시료 납부</h4>
+                            <p class="text-gray-700 text-sm">접수 완료 후 안내에 따라 응시료를 납부합니다.</p>
+                        </div>
+                        
+                        <div class="relative">
+                            <div class="absolute -left-8 top-0 w-5 h-5 bg-primary rounded-full flex items-center justify-center text-white text-xs">4</div>
+                            <h4 class="font-medium mb-1">시험 응시</h4>
+                            <p class="text-gray-700 text-sm">지정된 시험장에서 필기 및 실기 시험을 치릅니다.</p>
+                        </div>
+                        
+                        <div class="relative">
+                            <div class="absolute -left-8 top-0 w-5 h-5 bg-primary rounded-full flex items-center justify-center text-white text-xs">5</div>
+                            <h4 class="font-medium mb-1">결과 확인 및 자격증 발급</h4>
+                            <p class="text-gray-700 text-sm">합격자에 한해 자격증이 발급됩니다 (시험 후 4주 이내).</p>
+                        </div>
+                    </div>
+                    <a href="#" class="inline-block bg-primary text-white py-2 px-4 rounded-button font-medium whitespace-nowrap">자격증 시험 신청하기</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 자료실 -->
+    <section id="resources" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">자료실</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">한국프리젠터협회에서 제공하는 다양한 프레젠테이션 관련 자료를 이용하실 수 있습니다.</p>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-md overflow-hidden mb-8">
+                <div class="border-b">
+                    <div class="flex">
+                        <button id="tab-lecture" class="resource-tab px-6 py-4 text-primary border-b-2 border-primary font-medium">강의 자료</button>
+                        <button id="tab-research" class="resource-tab px-6 py-4 text-gray-500 font-medium">연구 자료</button>
+                        <button id="tab-law" class="resource-tab px-6 py-4 text-gray-500 font-medium">관련 법령</button>
+                    </div>
+                </div>
+                
+                <div class="p-6">
+                    <!-- 강의 자료 -->
+                    <div id="content-lecture" class="resource-content">
+                        <div class="mb-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-bold">강의 자료</h3>
+                                <div class="relative">
+                                    <input type="text" placeholder="자료 검색" class="pl-10 pr-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary/30 focus:border-primary">
+                                    <div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
+                                        <i class="ri-search-line"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div class="border rounded-lg overflow-hidden hover:shadow-md transition-shadow">
+                                    <div class="bg-blue-50 p-4">
+                                        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full text-primary mb-2">
+                                            <i class="ri-file-pdf-line ri-xl"></i>
+                                        </div>
+                                        <h4 class="font-medium">프레젠테이션 기본 구조 가이드</h4>
+                                        <p class="text-sm text-gray-600">PDF | 2.3MB | 2025-04-15</p>
+                                    </div>
+                                    <div class="p-4 flex justify-between items-center">
+                                        <span class="text-sm text-gray-500">다운로드 312회</span>
+                                        <a href="#" class="text-primary hover:underline text-sm flex items-center">
+                                            다운로드
+                                            <i class="ri-download-line ml-1"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <div class="border rounded-lg overflow-hidden hover:shadow-md transition-shadow">
+                                    <div class="bg-blue-50 p-4">
+                                        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full text-primary mb-2">
+                                            <i class="ri-file-ppt-line ri-xl"></i>
+                                        </div>
+                                        <h4 class="font-medium">효과적인 슬라이드 디자인 템플릿</h4>
+                                        <p class="text-sm text-gray-600">PPT | 5.7MB | 2025-03-22</p>
+                                    </div>
+                                    <div class="p-4 flex justify-between items-center">
+                                        <span class="text-sm text-gray-500">다운로드 458회</span>
+                                        <a href="#" class="text-primary hover:underline text-sm flex items-center">
+                                            다운로드
+                                            <i class="ri-download-line ml-1"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <div class="border rounded-lg overflow-hidden hover:shadow-md transition-shadow">
+                                    <div class="bg-blue-50 p-4">
+                                        <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-full text-primary mb-2">
+                                            <i class="ri-file-video-line ri-xl"></i>
+                                        </div>
+                                        <h4 class="font-medium">발표 불안 극복하기 강의 영상</h4>
+                                        <p class="text-sm text-gray-600">MP4 | 128MB | 2025-05-10</p>
+                                    </div>
+                                    <div class="p-4 flex justify-between items-center">
+                                        <span class="text-sm text-gray-500">조회수 1,245회</span>
+                                        <a href="#" class="text-primary hover:underline text-sm flex items-center">
+                                            시청하기
+                                            <i class="ri-play-line ml-1"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <a href="#" class="inline-block bg-primary text-white py-2 px-6 rounded-button font-medium whitespace-nowrap">더 많은 자료 보기</a>
+                        </div>
+                    </div>
+                    
+                    <!-- 연구 자료 -->
+                    <div id="content-research" class="resource-content hidden">
+                        <div class="mb-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-bold">연구 자료</h3>
+                                <div class="relative">
+                                    <input type="text" placeholder="자료 검색" class="pl-10 pr-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary/30 focus:border-primary">
+                                    <div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
+                                        <i class="ri-search-line"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="border rounded-lg p-4 hover:shadow-md transition-shadow">
+                                    <div class="flex flex-col md:flex-row md:items-center justify-between">
+                                        <div>
+                                            <h4 class="font-medium mb-1">프레젠테이션이 기업 성과에 미치는 영향에 관한 연구</h4>
+                                            <p class="text-sm text-gray-600 mb-2">저자: 김도윤 교수 | 발행일: 2025-02-15</p>
+                                            <p class="text-sm text-gray-700">본 연구는 효과적인 프레젠테이션이 기업의 매출 및 브랜드 이미지에 미치는 영향을 분석한 결과를 담고 있습니다.</p>
+                                        </div>
+                                        <div class="mt-4 md:mt-0">
+                                            <a href="#" class="text-primary hover:underline text-sm flex items-center">
+                                                다운로드
+                                                <i class="ri-download-line ml-1"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="border rounded-lg p-4 hover:shadow-md transition-shadow">
+                                    <div class="flex flex-col md:flex-row md:items-center justify-between">
+                                        <div>
+                                            <h4 class="font-medium mb-1">한국과 미국의 프레젠테이션 문화 비교 연구</h4>
+                                            <p class="text-sm text-gray-600 mb-2">저자: 이하은 연구원 | 발행일: 2024-11-30</p>
+                                            <p class="text-sm text-gray-700">한국과 미국의 프레젠테이션 문화 및 스타일 차이를 분석하고 글로벌 비즈니스에서의 적용 방안을 제시합니다.</p>
+                                        </div>
+                                        <div class="mt-4 md:mt-0">
+                                            <a href="#" class="text-primary hover:underline text-sm flex items-center">
+                                                다운로드
+                                                <i class="ri-download-line ml-1"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="border rounded-lg p-4 hover:shadow-md transition-shadow">
+                                    <div class="flex flex-col md:flex-row md:items-center justify-between">
+                                        <div>
+                                            <h4 class="font-medium mb-1">AI 시대의 프레젠테이션 기술 변화 전망</h4>
+                                            <p class="text-sm text-gray-600 mb-2">저자: 정수민 박사 | 발행일: 2025-01-10</p>
+                                            <p class="text-sm text-gray-700">인공지능 기술의 발전이 프레젠테이션 방식과 기술에 미치는 영향을 분석하고 미래 전망을 제시합니다.</p>
+                                        </div>
+                                        <div class="mt-4 md:mt-0">
+                                            <a href="#" class="text-primary hover:underline text-sm flex items-center">
+                                                다운로드
+                                                <i class="ri-download-line ml-1"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <a href="#" class="inline-block bg-primary text-white py-2 px-6 rounded-button font-medium whitespace-nowrap">더 많은 연구 자료 보기</a>
+                        </div>
+                    </div>
+                    
+                    <!-- 관련 법령 -->
+                    <div id="content-law" class="resource-content hidden">
+                        <div class="mb-6">
+                            <h3 class="text-xl font-bold mb-4">관련 법령</h3>
+                            
+                            <div class="space-y-6">
+                                <div class="border-b pb-4">
+                                    <h4 class="font-medium mb-2">저작권법 관련 규정</h4>
+                                    <p class="text-gray-700 mb-3">프레젠테이션 자료 제작 시 알아야 할 저작권 관련 법령 및 가이드라인입니다.</p>
+                                    <div class="bg-gray-50 p-4 rounded-lg text-sm text-gray-700">
+                                        <p class="mb-2">저작권법 제35조의3(저작물의 공정한 이용)</p>
+                                        <p>① 저작물의 통상적인 이용 방법과 충돌하지 아니하고 저작자의 정당한 이익을 부당하게 해치지 아니하는 경우에는 저작물을 이용할 수 있다.</p>
+                                        <p>② 저작물 이용 행위가 제1항에 해당하는지를 판단할 때에는 다음 각 호의 사항을 고려하여야 한다.</p>
+                                        <p class="ml-4">1. 영리성 또는 비영리성 등 이용의 목적 및 성격</p>
+                                        <p class="ml-4">2. 저작물의 종류 및 용도</p>
+                                        <p class="ml-4">3. 이용된 부분이 저작물 전체에서 차지하는 비중과 그 중요성</p>
+                                        <p class="ml-4">4. 저작물의 이용이 그 저작물의 현재 시장 또는 가치나 잠재적인 시장 또는 가치에 미치는 영향</p>
+                                    </div>
+                                    <div class="mt-3">
+                                        <a href="#" class="text-primary hover:underline text-sm flex items-center">
+                                            전체 법령 보기
+                                            <i class="ri-external-link-line ml-1"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <div class="border-b pb-4">
+                                    <h4 class="font-medium mb-2">개인정보 보호법 관련 규정</h4>
+                                    <p class="text-gray-700 mb-3">프레젠테이션에 개인정보 포함 시 준수해야 할 개인정보 보호 관련 법령입니다.</p>
+                                    <div class="bg-gray-50 p-4 rounded-lg text-sm text-gray-700">
+                                        <p class="mb-2">개인정보 보호법 제15조(개인정보의 수집·이용)</p>
+                                        <p>① 개인정보처리자는 다음 각 호의 어느 하나에 해당하는 경우에는 개인정보를 수집할 수 있으며 그 수집 목적의 범위에서 이용할 수 있다.</p>
+                                        <p class="ml-4">1. 정보주체의 동의를 받은 경우</p>
+                                        <p class="ml-4">2. 법률에 특별한 규정이 있거나 법령상 의무를 준수하기 위하여 불가피한 경우</p>
+                                        <p class="ml-4">3. 공공기관이 법령 등에서 정하는 소관 업무의 수행을 위하여 불가피한 경우</p>
+                                    </div>
+                                    <div class="mt-3">
+                                        <a href="#" class="text-primary hover:underline text-sm flex items-center">
+                                            전체 법령 보기
+                                            <i class="ri-external-link-line ml-1"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="font-medium mb-2">자격기본법 관련 규정</h4>
+                                    <p class="text-gray-700 mb-3">프레젠테이션 관련 자격증 발급 및 운영에 관한 법령입니다.</p>
+                                    <div class="bg-gray-50 p-4 rounded-lg text-sm text-gray-700">
+                                        <p class="mb-2">자격기본법 제17조(민간자격의 신설 및 등록 등)</p>
+                                        <p>① 국가직무능력표준에 부합하는 민간자격을 신설하여 관리·운영하려는 자는 해당 민간자격을 주무부장관에게 등록하여야 한다.</p>
+                                        <p>② 주무부장관은 제1항에 따른 등록의 신청을 받은 경우 그 자격이 다음 각 호의 어느 하나에 해당하는 경우를 제외하고는 등록하여야 한다.</p>
+                                        <p class="ml-4">1. 국가자격과 동일한 명칭을 사용하는 경우</p>
+                                        <p class="ml-4">2. 다른 법령에서 금지하는 행위와 관련된 분야인 경우</p>
+                                    </div>
+                                    <div class="mt-3">
+                                        <a href="#" class="text-primary hover:underline text-sm flex items-center">
+                                            전체 법령 보기
+                                            <i class="ri-external-link-line ml-1"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-blue-50 rounded-lg p-6 shadow-sm">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="mb-4 md:mb-0">
+                        <h3 class="text-xl font-bold mb-2">더 많은 자료가 필요하신가요?</h3>
+                        <p class="text-gray-700">회원가입 후 더 많은 프레젠테이션 자료와 템플릿을 이용하실 수 있습니다.</p>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-white border border-primary text-primary px-4 py-2 rounded-button font-medium whitespace-nowrap">자료 요청하기</a>
+                        <a href="#" class="bg-primary text-white px-4 py-2 rounded-button font-medium whitespace-nowrap">회원가입하기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 공지사항 -->
+    <section id="notice" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">공지사항</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">한국프리젠터협회의 최신 소식과 행사 정보를 확인하세요.</p>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-md overflow-hidden mb-8">
+                <div class="border-b">
+                    <div class="flex">
+                        <button id="tab-all" class="notice-tab px-6 py-4 text-primary border-b-2 border-primary font-medium">전체</button>
+                        <button id="tab-news" class="notice-tab px-6 py-4 text-gray-500 font-medium">협회 소식</button>
+                        <button id="tab-events" class="notice-tab px-6 py-4 text-gray-500 font-medium">행사 안내</button>
+                    </div>
+                </div>
+                
+                <div class="p-6">
+                    <div id="content-all" class="notice-content">
+                        <div class="space-y-6">
+                            <!-- 중요 공지 -->
+                            <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg">
+                                <div class="flex items-start">
+                                    <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-red-500">
+                                        <i class="ri-notification-3-line"></i>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center mb-1">
+                                            <span class="font-bold text-red-600 mr-2">[중요]</span>
+                                            <h3 class="font-medium">2025년 자격증 시험 일정 변경 안내</h3>
+                                        </div>
+                                        <p class="text-sm text-gray-700 mb-2">2025년 2차 자격증 시험 일정이 8월 25일로 변경되었습니다. 자세한 내용은 공지를 확인해 주세요.</p>
+                                        <div class="flex items-center justify-between">
+                                            <span class="text-xs text-gray-500">2025-05-25</span>
+                                            <a href="#" class="text-primary hover:underline text-sm">자세히 보기</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- 일반 공지 -->
+                            <div class="border-b pb-4">
+                                <div class="flex items-start">
+                                    <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-gray-500">
+                                        <i class="ri-file-list-line"></i>
+                                    </div>
+                                    <div class="w-full">
+                                        <div class="flex items-center mb-1">
+                                            <span class="font-bold text-blue-600 mr-2">[협회 소식]</span>
+                                            <h3 class="font-medium">제5대 김민준 회장 취임식 개최</h3>
+                                        </div>
+                                        <p class="text-sm text-gray-700 mb-2">한국프리젠터협회 제5대 김민준 회장 취임식이 성황리에 개최되었습니다. 새로운 비전과 목표를 함께 나누는 자리였습니다.</p>
+                                        <div class="flex items-center justify-between">
+                                            <span class="text-xs text-gray-500">2025-05-20</span>
+                                            <a href="#" class="text-primary hover:underline text-sm">자세히 보기</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="border-b pb-4">
+                                <div class="flex items-start">
+                                    <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-gray-500">
+                                        <i class="ri-calendar-event-line"></i>
+                                    </div>
+                                    <div class="w-full">
+                                        <div class="flex items-center mb-1">
+                                            <span class="font-bold text-green-600 mr-2">[행사 안내]</span>
+                                            <h3 class="font-medium">2025 국제 프레젠테이션 컨퍼런스 개최 안내</h3>
+                                        </div>
+                                        <p class="text-sm text-gray-700 mb-2">오는 7월 15일부터 17일까지 서울 코엑스에서 '2025 국제 프레젠테이션 컨퍼런스'가 개최됩니다. 세계 각국의 전문가들과 함께하는 자리에 여러분을 초대합니다.</p>
+                                        <div class="flex items-center justify-between">
+                                            <span class="text-xs text-gray-500">2025-05-15</span>
+                                            <a href="#" class="text-primary hover:underline text-sm">자세히 보기</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="border-b pb-4">
+                                <div class="flex items-start">
+                                    <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-gray-500">
+                                        <i class="ri-file-list-line"></i>
+                                    </div>
+                                    <div class="w-full">
+                                        <div class="flex items-center mb-1">
+                                            <span class="font-bold text-blue-600 mr-2">[협회 소식]</span>
+                                            <h3 class="font-medium">온라인 교육 플랫폼 '프레젠터 아카데미' 오픈</h3>
+                                        </div>
+                                        <p class="text-sm text-gray-700 mb-2">언제 어디서나 프레젠테이션 교육을 받을 수 있는 온라인 플랫폼 '프레젠터 아카데미'가 오픈했습니다. 다양한 강의와 실습 자료를 제공합니다.</p>
+                                        <div class="flex items-center justify-between">
+                                            <span class="text-xs text-gray-500">2025-05-10</span>
+                                            <a href="#" class="text-primary hover:underline text-sm">자세히 보기</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="border-b pb-4">
+                                <div class="flex items-start">
+                                    <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-gray-500">
+                                        <i class="ri-calendar-event-line"></i>
+                                    </div>
+                                    <div class="w-full">
+                                        <div class="flex items-center mb-1">
+                                            <span class="font-bold text-green-600 mr-2">[행사 안내]</span>
+                                            <h3 class="font-medium">2025 프레젠테이션 콘테스트 참가자 모집</h3>
+                                        </div>
+                                        <p class="text-sm text-gray-700 mb-2">제15회 한국 프레젠테이션 콘테스트 참가자를 모집합니다. 대학생부, 일반부, 전문가부로 나누어 진행되며 우수자에게는 상금과 함께 인턴십 기회가 제공됩니다.</p>
+                                        <div class="flex items-center justify-between">
+                                            <span class="text-xs text-gray-500">2025-05-05</span>
+                                            <a href="#" class="text-primary hover:underline text-sm">자세히 보기</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-center mt-8">
+                            <nav class="inline-flex rounded-md shadow">
+                                <a href="#" class="py-2 px-4 bg-white border border-gray-300 text-sm font-medium rounded-l-md text-gray-700 hover:bg-gray-50">이전</a>
+                                <a href="#" class="py-2 px-4 bg-primary border border-primary text-sm font-medium text-white">1</a>
+                                <a href="#" class="py-2 px-4 bg-white border border-gray-300 text-sm font-medium text-gray-700 hover:bg-gray-50">2</a>
+                                <a href="#" class="py-2 px-4 bg-white border border-gray-300 text-sm font-medium text-gray-700 hover:bg-gray-50">3</a>
+                                <a href="#" class="py-2 px-4 bg-white border border-gray-300 text-sm font-medium rounded-r-md text-gray-700 hover:bg-gray-50">다음</a>
+                            </nav>
+                        </div>
+                    </div>
+                    
+                    <div id="content-news" class="notice-content hidden">
+                        <!-- 협회 소식 내용 -->
+                    </div>
+                    
+                    <div id="content-events" class="notice-content hidden">
+                        <!-- 행사 안내 내용 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 회원 서비스 -->
+    <section id="membership" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">회원 서비스</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">한국프리젠터협회 회원이 되어 다양한 혜택과 서비스를 이용하세요.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full text-primary mb-4 mx-auto">
+                        <i class="ri-vip-crown-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center">회원 혜택</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+                                <i class="ri-check-line"></i>
+                            </div>
+                            <span class="text-gray-700">교육 프로그램 수강료 20% 할인</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+                                <i class="ri-check-line"></i>
+                            </div>
+                            <span class="text-gray-700">자격증 응시료 10% 할인</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+                                <i class="ri-check-line"></i>
+                            </div>
+                            <span class="text-gray-700">회원 전용 자료실 이용</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+                                <i class="ri-check-line"></i>
+                            </div>
+                            <span class="text-gray-700">협회 주최 행사 우선 참가권</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+                                <i class="ri-check-line"></i>
+                            </div>
+                            <span class="text-gray-700">프레젠테이션 컨설팅 서비스 제공</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full text-primary mb-4 mx-auto">
+                        <i class="ri-user-add-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center">가입 절차</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 flex items-center justify-center bg-primary rounded-full text-white text-xs mr-3 mt-0.5 flex-shrink-0">1</div>
+                            <div>
+                                <h4 class="font-medium mb-1">회원가입 신청</h4>
+                                <p class="text-sm text-gray-700">홈페이지에서 회원가입 양식을 작성하여 제출합니다.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 flex items-center justify-center bg-primary rounded-full text-white text-xs mr-3 mt-0.5 flex-shrink-0">2</div>
+                            <div>
+                                <h4 class="font-medium mb-1">가입비 및 연회비 납부</h4>
+                                <p class="text-sm text-gray-700">안내에 따라 가입비와 연회비를 납부합니다.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 flex items-center justify-center bg-primary rounded-full text-white text-xs mr-3 mt-0.5 flex-shrink-0">3</div>
+                            <div>
+                                <h4 class="font-medium mb-1">승인 및 회원증 발급</h4>
+                                <p class="text-sm text-gray-700">가입 승인 후 회원증이 발급됩니다.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-6 h-6 flex items-center justify-center bg-primary rounded-full text-white text-xs mr-3 mt-0.5 flex-shrink-0">4</div>
+                            <div>
+                                <h4 class="font-medium mb-1">회원 서비스 이용</h4>
+                                <p class="text-sm text-gray-700">다양한 회원 혜택과 서비스를 이용하실 수 있습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full text-primary mb-4 mx-auto">
+                        <i class="ri-folder-lock-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-center">회원 전용 자료실</h3>
+                    <p class="text-gray-700 mb-4">회원만 이용할 수 있는 다양한 프레젠테이션 자료와 템플릿을 제공합니다.</p>
+                    <ul class="space-y-3 mb-4">
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+                                <i class="ri-file-list-line"></i>
+                            </div>
+                            <span class="text-gray-700">프레젠테이션 템플릿 100종 이상</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+                                <i class="ri-video-line"></i>
+                            </div>
+                            <span class="text-gray-700">전문가 강의 영상 라이브러리</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+                                <i class="ri-book-read-line"></i>
+                            </div>
+                            <span class="text-gray-700">프레젠테이션 전문 서적 요약본</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+                                <i class="ri-image-line"></i>
+                            </div>
+                            <span class="text-gray-700">고품질 이미지 및 아이콘 라이브러리</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="block text-center bg-primary text-white py-2 px-4 rounded-button font-medium whitespace-nowrap">자세히 보기</a>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-6">자주 묻는 질문 (FAQ)</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="border rounded-lg overflow-hidden">
+                            <button class="faq-question w-full flex items-center justify-between p-4 text-left font-medium focus:outline-none">
+                                <span>회원 가입은 누구나 할 수 있나요?</span>
+                                <i class="ri-arrow-down-s-line"></i>
+                            </button>
+                            <div class="faq-answer bg-gray-50 p-4 border-t hidden">
+                                <p class="text-gray-700">네, 프레젠테이션에 관심이 있는 누구나 회원 가입이 가능합니다. 학생, 직장인, 교육자, 프리랜서 등 다양한 분야의 회원들이 활동하고 있습니다.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="border rounded-lg overflow-hidden">
+                            <button class="faq-question w-full flex items-center justify-between p-4 text-left font-medium focus:outline-none">
+                                <span>회원 가입비와 연회비는 얼마인가요?</span>
+                                <i class="ri-arrow-down-s-line"></i>
+                            </button>
+                            <div class="faq-answer bg-gray-50 p-4 border-t hidden">
+                                <p class="text-gray-700">회원 가입비는 30,000원(최초 1회), 연회비는 일반회원 50,000원, 학생회원 30,000원입니다. 평생회원의 경우 500,000원의 일시불 납부로 평생 회원 자격이 유지됩니다.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="border rounded-lg overflow-hidden">
+                            <button class="faq-question w-full flex items-center justify-between p-4 text-left font-medium focus:outline-none">
+                                <span>회원 탈퇴 시 납부한 회비는 환불되나요?</span>
+                                <i class="ri-arrow-down-s-line"></i>
+                            </button>
+                            <div class="faq-answer bg-gray-50 p-4 border-t hidden">
+                                <p class="text-gray-700">회원 가입 후 7일 이내 탈퇴 시 전액 환불이 가능합니다. 그 이후에는 잔여 기간에 대한 연회비를 일할 계산하여 환불해 드립니다. 단, 가입비는 환불되지 않습니다.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="border rounded-lg overflow-hidden">
+                            <button class="faq-question w-full flex items-center justify-between p-4 text-left font-medium focus:outline-none">
+                                <span>회원 전용 자료는 어떻게 이용할 수 있나요?</span>
+                                <i class="ri-arrow-down-s-line"></i>
+                            </button>
+                            <div class="faq-answer bg-gray-50 p-4 border-t hidden">
+                                <p class="text-gray-700">회원 로그인 후 '회원 전용 자료실' 메뉴에서 다양한 자료를 이용하실 수 있습니다. 다운로드 횟수에는 제한이 없으며, 모든 자료는 회원 기간 동안 자유롭게 이용 가능합니다.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="border rounded-lg overflow-hidden">
+                            <button class="faq-question w-full flex items-center justify-between p-4 text-left font-medium focus:outline-none">
+                                <span>교육 프로그램 할인은 어떻게 적용되나요?</span>
+                                <i class="ri-arrow-down-s-line"></i>
+                            </button>
+                            <div class="faq-answer bg-gray-50 p-4 border-t hidden">
+                                <p class="text-gray-700">회원 로그인 후 교육 프로그램 신청 시 자동으로 할인이 적용됩니다. 결제 페이지에서 할인된 금액을 확인하실 수 있습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-blue-50 p-6 flex flex-col md:flex-row items-center justify-between">
+                    <div class="mb-4 md:mb-0">
+                        <h3 class="text-xl font-bold mb-2">지금 바로 회원이 되어보세요!</h3>
+                        <p class="text-gray-700">프레젠테이션 전문가로 성장하는 첫 걸음, 한국프리젠터협회와 함께하세요.</p>
+                    </div>
+                    <a href="#" class="bg-primary text-white px-6 py-3 rounded-button font-medium whitespace-nowrap">회원가입 하기</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 문의하기 -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">문의하기</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">궁금한 점이 있으시면 언제든지 문의해 주세요. 빠르고 정확하게 답변해 드리겠습니다.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-6">문의 양식</h3>
+                        <form>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">이름 *</label>
+                                    <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary/30 focus:border-primary" required>
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">이메일 *</label>
+                                    <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary/30 focus:border-primary" required>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">연락처</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary/30 focus:border-primary">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">문의 유형 *</label>
+                                <div class="relative">
+                                    <select id="subject" class="w-full px-4 py-2 border rounded-lg appearance-none focus:ring-2 focus:ring-primary/30 focus:border-primary pr-8" required>
+                                        <option value="">선택해주세요</option>
+                                        <option value="education">교육 프로그램 문의</option>
+                                        <option value="certificate">자격증 문의</option>
+                                        <option value="membership">회원 관련 문의</option>
+                                        <option value="other">기타 문의</option>
+                                    </select>
+                                    <div class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                                        <i class="ri-arrow-down-s-line"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">문의 내용 *</label>
+                                <textarea id="message" rows="5" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary/30 focus:border-primary" required></textarea>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <div class="flex items-start">
+                                    <div class="flex items-center h-5">
+                                        <input id="privacy" type="checkbox" class="w-4 h-4 border-gray-300 rounded focus:ring-primary" required>
+                                    </div>
+                                    <label for="privacy" class="ml-2 text-sm text-gray-700">
+                                        개인정보 수집 및 이용에 동의합니다. <a href="#" class="text-primary hover:underline">개인정보처리방침</a>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-primary text-white py-3 px-4 rounded-button font-medium whitespace-nowrap">문의하기</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                        <h3 class="text-xl font-bold mb-6">연락처 정보</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full text-primary mr-4 flex-shrink-0">
+                                    <i class="ri-map-pin-line ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1">주소</h4>
+                                    <p class="text-gray-700">서울특별시 강남구 테헤란로 123 프레젠터빌딩 5층</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full text-primary mr-4 flex-shrink-0">
+                                    <i class="ri-phone-line ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1">전화</h4>
+                                    <p class="text-gray-700">02-1234-5678</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full text-primary mr-4 flex-shrink-0">
+                                    <i class="ri-mail-line ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1">이메일</h4>
+                                    <p class="text-gray-700">info@koreapresenter.org</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full text-primary mr-4 flex-shrink-0">
+                                    <i class="ri-time-line ri-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1">업무 시간</h4>
+                                    <p class="text-gray-700">월-금: 9:00 - 18:00 (공휴일 제외)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="h-64 bg-gray-200">
+                            <img src="https://public.readdy.ai/gen_page/map_placeholder_1280x720.png" alt="지도" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-medium mb-2">오시는 길</h4>
+                            <ul class="text-sm text-gray-700 space-y-2">
+                                <li class="flex items-start">
+                                    <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+                                        <i class="ri-subway-line"></i>
+                                    </div>
+                                    <span>지하철: 2호선 강남역 3번 출구에서 도보 5분</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+                                        <i class="ri-bus-line"></i>
+                                    </div>
+                                    <span>버스: 강남역 정류장 하차 (간선 146, 301 / 지선 8541)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+                                        <i class="ri-car-line"></i>
+                                    </div>
+                                    <span>주차: 건물 내 지하주차장 이용 가능 (1시간 무료)</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">한국프리젠터협회</h3>
+                    <p class="text-gray-400 mb-4">효과적인 프레젠테이션 기술을 통해 더 나은 커뮤니케이션의 미래를 만들어갑니다.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-8 h-8 flex items-center justify-center bg-gray-700 rounded-full hover:bg-primary transition-colors">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 flex items-center justify-center bg-gray-700 rounded-full hover:bg-primary transition-colors">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 flex items-center justify-center bg-gray-700 rounded-full hover:bg-primary transition-colors">
+                            <i class="ri-youtube-line"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 flex items-center justify-center bg-gray-700 rounded-full hover:bg-primary transition-colors">
+                            <i class="ri-kakao-talk-fill"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">바로가기</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#intro" class="text-gray-400 hover:text-white">협회 소개</a></li>
+                        <li><a href="#education" class="text-gray-400 hover:text-white">교육과정</a></li>
+                        <li><a href="#certificate" class="text-gray-400 hover:text-white">자격증 안내</a></li>
+                        <li><a href="#resources" class="text-gray-400 hover:text-white">자료실</a></li>
+                        <li><a href="#notice" class="text-gray-400 hover:text-white">공지사항</a></li>
+                        <li><a href="#membership" class="text-gray-400 hover:text-white">회원서비스</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">연락처</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-gray-400">
+                                <i class="ri-map-pin-line"></i>
+                            </div>
+                            <span class="text-gray-400">서울특별시 강남구 테헤란로 123</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-gray-400">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <span class="text-gray-400">02-1234-5678</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-gray-400">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <span class="text-gray-400">info@koreapresenter.org</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">뉴스레터 구독</h3>
+                    <p class="text-gray-400 mb-4">최신 소식과 유용한 정보를 이메일로 받아보세요.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="이메일 주소" class="px-4 py-2 rounded-l-button bg-gray-700 border-none text-white focus:ring-2 focus:ring-primary/30 w-full">
+                        <button type="submit" class="bg-primary text-white px-4 py-2 rounded-r-button whitespace-nowrap">구독하기</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="text-gray-400 text-sm mb-4 md:mb-0">
+                    © 2025 한국프리젠터협회. All rights reserved.
+                </div>
+                <div class="flex space-x-4 text-sm text-gray-400">
+                    <a href="#" class="hover:text-white">개인정보처리방침</a>
+                    <a href="#" class="hover:text-white">이용약관</a>
+                    <a href="#" class="hover:text-white">사이트맵</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script id="tabsScript">
+        document.addEventListener('DOMContentLoaded', function() {
+            // 협회 소개 탭
+            const introTabs = document.querySelectorAll('.tab-btn');
+            const introContents = document.querySelectorAll('.tab-content');
+            
+            introTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // 모든 탭 비활성화
+                    introTabs.forEach(t => {
+                        t.classList.remove('text-primary', 'border-b-2', 'border-primary');
+                        t.classList.add('text-gray-500');
+                    });
+                    
+                    // 클릭한 탭 활성화
+                    tab.classList.add('text-primary', 'border-b-2', 'border-primary');
+                    tab.classList.remove('text-gray-500');
+                    
+                    // 모든 콘텐츠 숨기기
+                    introContents.forEach(content => {
+                        content.classList.add('hidden');
+                    });
+                    
+                    // 해당 콘텐츠 표시
+                    const targetId = tab.id.replace('tab-', 'content-');
+                    document.getElementById(targetId).classList.remove('hidden');
+                });
+            });
+        });
+    </script>
+
+    <script id="resourceTabsScript">
+        document.addEventListener('DOMContentLoaded', function() {
+            // 자료실 탭
+            const resourceTabs = document.querySelectorAll('.resource-tab');
+            const resourceContents = document.querySelectorAll('.resource-content');
+            
+            resourceTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // 모든 탭 비활성화
+                    resourceTabs.forEach(t => {
+                        t.classList.remove('text-primary', 'border-b-2', 'border-primary');
+                        t.classList.add('text-gray-500');
+                    });
+                    
+                    // 클릭한 탭 활성화
+                    tab.classList.add('text-primary', 'border-b-2', 'border-primary');
+                    tab.classList.remove('text-gray-500');
+                    
+                    // 모든 콘텐츠 숨기기
+                    resourceContents.forEach(content => {
+                        content.classList.add('hidden');
+                    });
+                    
+                    // 해당 콘텐츠 표시
+                    const targetId = tab.id.replace('tab-', 'content-');
+                    document.getElementById(targetId).classList.remove('hidden');
+                });
+            });
+        });
+    </script>
+
+    <script id="noticeTabsScript">
+        document.addEventListener('DOMContentLoaded', function() {
+            // 공지사항 탭
+            const noticeTabs = document.querySelectorAll('.notice-tab');
+            const noticeContents = document.querySelectorAll('.notice-content');
+            
+            noticeTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // 모든 탭 비활성화
+                    noticeTabs.forEach(t => {
+                        t.classList.remove('text-primary', 'border-b-2', 'border-primary');
+                        t.classList.add('text-gray-500');
+                    });
+                    
+                    // 클릭한 탭 활성화
+                    tab.classList.add('text-primary', 'border-b-2', 'border-primary');
+                    tab.classList.remove('text-gray-500');
+                    
+                    // 모든 콘텐츠 숨기기
+                    noticeContents.forEach(content => {
+                        content.classList.add('hidden');
+                    });
+                    
+                    // 해당 콘텐츠 표시
+                    const targetId = tab.id.replace('tab-', 'content-');
+                    document.getElementById(targetId).classList.remove('hidden');
+                });
+            });
+        });
+    </script>
+
+    <script id="faqScript">
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ 아코디언
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const icon = question.querySelector('i');
+                    
+                    // 토글 답변 표시/숨김
+                    answer.classList.toggle('hidden');
+                    
+                    // 아이콘 회전
+                    if (answer.classList.contains('hidden')) {
+                        icon.classList.remove('ri-arrow-up-s-line');
+                        icon.classList.add('ri-arrow-down-s-line');
+                    } else {
+                        icon.classList.remove('ri-arrow-down-s-line');
+                        icon.classList.add('ri-arrow-up-s-line');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
